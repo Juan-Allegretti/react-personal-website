@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Terminal from './components/Terminal.jsx';
+import "./App.css";
+
+
+const getYear = () => {
+  return new Date().getFullYear();
+};
+
+const bannerCondensed =
+  "             _         __     _    _                 \n" +
+  " __ _ _ __ _(_)__ _   / _|___| |__| |_ __  __ _ _ _  \n" +
+  "/ _| '_/ _` | / _` | |  _/ -_) / _` | '  \\/ _` | ' \\ \n" +
+  "\\__|_| \\__,_|_\\__, | |_| \\___|_\\__,_|_|_|_\\__,_|_||_|\n " +
+  "             |___/                                  \n" +
+  "  \u00A9 " +
+  getYear();
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Terminal
+      banner={bannerCondensed}
+      />
+
   );
 }
 
